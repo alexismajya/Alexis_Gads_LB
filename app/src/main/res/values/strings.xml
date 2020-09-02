@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">LEADERBOAD</string>
+    <string name="tab_text_1">Learning hours</string>
+    <string name="tab_text_2">Skill IQ score</string>
+    <string name="error_data_loading">Error Data Loading</string>
+</resources>
