@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">LEADERBOAD</string>
-    <string name="tab_text_1">Learning hours</string>
-    <string name="tab_text_2">Skill IQ score</string>
+    <string name="tab_text_1">Learning Leaders</string>
+    <string name="tab_text_2">Skill IQ Leaders</string>
     <string name="error_data_loading">Error Data Loading</string>
+    <string name="project_submission_name">Project Submission</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_on_github_link">Project on GITHUB (link)</string>
 </resources>

@@ -19,10 +19,11 @@ public class TopLearner {
         this.badgeUrl = badgeUrl;
     }
 
-    @BindingAdapter({"android:badgeUrl"})
-    public static void loadImage (ImageView view, String badgeUrl){
-        Picasso.with(view.getContext())
-                .load(badgeUrl)
-                .into(view);
-    }
+//    @BindingAdapter({"android:imageUrl"})
+//    public static void loadImage (ImageView view, String imageUrl){
+//        Picasso.with(view.getContext())
+//                .load(imageUrl)
+//                .into(view);
+//    }
+
 }

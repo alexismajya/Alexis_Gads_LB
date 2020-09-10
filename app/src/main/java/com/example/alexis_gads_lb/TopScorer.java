@@ -19,11 +19,11 @@ public class TopScorer {
         this.badgeUrl = badgeUrl;
     }
 
-    @BindingAdapter({"android:urlBadge"})
-    public static void loadImage (ImageView view, String badgeUrl){
-        Picasso.with(view.getContext())
-                .load(badgeUrl)
-                .into(view);
-    }
+//    @BindingAdapter({"android:urlBadge"})
+//    public static void loadImage (ImageView view, String badgeUrl){
+//        Picasso.with(view.getContext())
+//                .load(badgeUrl)
+//                .into(view);
+//    }
 }
 

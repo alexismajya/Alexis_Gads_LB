@@ -57,8 +57,11 @@ public class TopScorersAdapter extends RecyclerView.Adapter<TopScorersAdapter.To
         public void bind (TopScorer topScorer) {
             tvName.setText(topScorer.name);
             tvDetails.setText(topScorer.score+" skill IQ Score, "+ topScorer.country);
-            imageView.setImageURI(Uri.parse(topScorer.badgeUrl));
-
+//            imageView.setImageURI(Uri.parse(topScorer.badgeUrl));
+            loadImage(imageView);
+        }
+        public void loadImage (ImageView imageView){
+            imageView.setImageResource(R.drawable.skill_iq_trimmed);
         }
     }
 }

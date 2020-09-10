@@ -83,7 +83,7 @@ public class ApiUtil {
 
     public static ArrayList<TopScorer> getTopScorersFromJson(String json){
         final String NAME="name";
-        final String HOURS="score";
+        final String SCORE="score";
         final String COUNTRY="country";
         final String BADGE_URL="badgeUrl";
 
@@ -97,7 +97,7 @@ public class ApiUtil {
 
                 TopScorer topScorer= new TopScorer(
                         learnerJson.getString(NAME),
-                        learnerJson.getInt(HOURS),
+                        learnerJson.getInt(SCORE),
                         learnerJson.getString(COUNTRY),
                         learnerJson.getString(BADGE_URL));
 

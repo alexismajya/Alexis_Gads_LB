@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.alexis_gads_lb.databinding.FragmentLearnersBinding;
 
 import java.util.ArrayList;
 
@@ -28,6 +27,7 @@ public class TopLearnersAdapter extends RecyclerView.Adapter<TopLearnersAdapter.
         Context context = parent.getContext();
         View itemView = LayoutInflater.from(context)
                 .inflate(R.layout.fragment_learners, parent, false);
+
         return new TopLearnerViewHolder(itemView);
     }
 
@@ -35,7 +35,9 @@ public class TopLearnersAdapter extends RecyclerView.Adapter<TopLearnersAdapter.
     public void onBindViewHolder(@NonNull TopLearnerViewHolder holder, int position) {
         TopLearner topLearner = topLearners.get(position);
         holder.bind(topLearner);
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -57,8 +59,12 @@ public class TopLearnersAdapter extends RecyclerView.Adapter<TopLearnersAdapter.
         public void bind (TopLearner topLearner) {
             tvName.setText(topLearner.name);
             tvDetails.setText(topLearner.hours+" learning hours, "+ topLearner.country);
-            imageView.setImageURI(Uri.parse(topLearner.badgeUrl));
+//            imageView.setImageURI(Uri.parse(topLearner.badgeUrl));
+            loadImage(imageView);
+        }
 
+        public void loadImage (ImageView imageView){
+            imageView.setImageResource(R.drawable.top_learner);
         }
     }
 }

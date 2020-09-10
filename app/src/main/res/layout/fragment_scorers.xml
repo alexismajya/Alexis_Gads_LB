@@ -21,12 +21,12 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="130dp"
+            android:layout_width="140dp"
             android:layout_height="60dp"
             android:layout_weight="45"
             android:layout_marginLeft="@dimen/main_margin"
             android:layout_marginRight="@dimen/main_margin"
-            android:urlBadge="@{TopScorer.badgeUrl}" />
+            android:src="@drawable/skill_iq_trimmed" />
 
         <LinearLayout
             android:layout_width="0dp"
