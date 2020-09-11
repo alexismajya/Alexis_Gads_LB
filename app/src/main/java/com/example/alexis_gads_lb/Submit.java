@@ -85,33 +85,43 @@ public class Submit extends AppCompatActivity {
 //                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 //                    public void onClick(DialogInterface dialog, int id) {
 
-                        retrofit2.Call retrofit2 = sendService.Submit(fName.getText().toString(),
-                                lName.getText().toString(),
-                                email.getText().toString(),
-                                link.getText().toString());
+                        if (!(fName.getText().length()>0 &&lName.getText().length()>0 && email.getText().length()>0 && link.getText().length()>0 )) {
+                            toast_text.setText("Submission not Successful. Input data");
+                            success.setVisibility(View.INVISIBLE);
+                            not_success.setVisibility(View.VISIBLE);
+                            toast.show();
+                            dialog.dismiss();
+                        } else {
+                                retrofit2.Call retrofit2 = sendService.Submit(fName.getText().toString(),
+                                        lName.getText().toString(),
+                                        email.getText().toString(),
+                                        link.getText().toString());
 
-                        retrofit2.enqueue(new Callback<String>(){
-                            @Override
-                            public void onResponse(retrofit2.Call call, Response response) {
-                                toast_text.setText("Submission Successful");
-                                success.setVisibility(View.VISIBLE);
-                                not_success.setVisibility(View.INVISIBLE);
-                                toast.show();
-//                                Toast.makeText(view.getContext(), "Submission Successful", Toast.LENGTH_SHORT).show();
+                                retrofit2.enqueue(new Callback<String>() {
+                                    @Override
+                                    public void onResponse(retrofit2.Call call, Response response) {
+                                        toast_text.setText("Submission Successful");
+                                        success.setVisibility(View.VISIBLE);
+                                        not_success.setVisibility(View.INVISIBLE);
+                                        toast.show();
+
+//                                        Log.d("Response", response.message());
+    //                                Toast.makeText(view.getContext(), "Submission Successful", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    @Override
+                                    public void onFailure(retrofit2.Call call, Throwable t) {
+                                        toast_text.setText("Submission not Successful");
+                                        success.setVisibility(View.INVISIBLE);
+                                        not_success.setVisibility(View.VISIBLE);
+                                        toast.show();
+    //                                Toast.makeText(view.getContext(), "Submission not Successful", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                dialog.dismiss();
                             }
 
-                            @Override
-                            public void onFailure(retrofit2.Call call, Throwable t) {
-                                toast_text.setText("Submission not Successful");
-                                success.setVisibility(View.INVISIBLE);
-                                not_success.setVisibility(View.VISIBLE);
-                                toast.show();
-//                                Toast.makeText(view.getContext(), "Submission not Successful", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        dialog.cancel();
-
-                    };
+                        };
                 });
 
 
@@ -119,7 +129,7 @@ public class Submit extends AppCompatActivity {
                 cancel_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        dialog.cancel();
+                        dialog.dismiss();
                     }
                 });
 
